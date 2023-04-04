@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage("Checkout: Code") {
         steps {
-          sh " sudo git pull"
+          sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
         }
     }
   }
