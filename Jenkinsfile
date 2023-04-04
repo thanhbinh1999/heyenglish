@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage("Checkout: Code") {
         steps {
-          sh "git pull"
+          sh " sudo git pull"
         }
     }
   }
