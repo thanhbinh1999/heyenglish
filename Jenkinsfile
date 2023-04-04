@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage("Checkout: Code") {
         steps {
-          ls -l
+          sh "ls -l"
         }
     }
   }
