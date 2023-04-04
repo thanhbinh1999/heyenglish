@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage("Checkout: Code") {
         steps {
-          sh "cd ../ && ls -l"
+          sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
+          sh  "cd ../ && ls -l"
         }
     }
   }
