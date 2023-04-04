@@ -13,7 +13,7 @@ pipeline {
     }
   }
   post {
-    alway {
+    always {
         cleanWs()
     }
   }
