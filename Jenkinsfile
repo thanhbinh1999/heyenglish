@@ -10,13 +10,13 @@ pipeline {
       steps {
         sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
       }
-    },
-    stage("Build: Composer ") {
+    }
+    stage("Build: Composer") {
       steps {
         sh " cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
       }
     }
-  },
+  }
   post {
     always {
         cleanWs()
