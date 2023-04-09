@@ -16,7 +16,7 @@ pipeline {
         sh " cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
       }
     }
-  }
+  },
   post {
     always {
         cleanWs()
