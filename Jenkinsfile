@@ -9,6 +9,7 @@ pipeline {
     stage("Update: Code") {
       steps {
         sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
+        sh "cp -prv * /var/www/html/heyenglish"
       }
     }
     stage("Build: Composer") {
