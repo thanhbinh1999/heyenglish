@@ -27,5 +27,8 @@ pipeline {
     always {
       cleanWs()
     }
+    changed {
+      echo "ok"
+    }
   }
 }
