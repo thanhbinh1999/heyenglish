@@ -9,7 +9,7 @@ pipeline {
     stage("Checkout: Code") {
         steps {
           sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
-          sh  "ls -l"
+          sh  "cd ../ && ls -l"
         }
     }
   }
