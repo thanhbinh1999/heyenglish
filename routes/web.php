@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('jenkin', function () {
-    return 'jenkin';
+Route::get('jenkins', function () {
+    return 'jenkins';
 });
