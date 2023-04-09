@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('okela', function(){
-    return 'doneeeee';
+Route::get('jenkins', function(){
+    return 'jenkins';
 });
