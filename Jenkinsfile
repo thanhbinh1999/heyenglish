@@ -6,11 +6,15 @@ pipeline {
     BUILD_HOME = "/var/www/html/projects/"
   }
   stages {
-    stage("Checkout: Code") {
-        steps {
-          sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
-          sh  "cd /var/www/html/docker && docker exec -it heyenglish_php bash -c 'cd heyenglish  && composer install'"
-        }
+    stage("Update: Code") {
+      steps {
+        sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
+      }
+    },
+    stage("Build: Composer ") {
+      steps {
+        sh " cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
+      }
     }
   }
   post {
