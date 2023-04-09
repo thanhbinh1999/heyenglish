@@ -17,6 +17,11 @@ pipeline {
         sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
       }
     }
+     stage("clear: Cache, Config") {
+      steps {
+        sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && php artisan cache clear'"
+      }
+    }
   }
   post {
     always {
