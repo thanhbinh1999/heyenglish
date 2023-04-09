@@ -19,7 +19,7 @@ pipeline {
     }
      stage("clear: Cache, Config") {
       steps {
-        sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && php artisan cache clear'"
+        sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && php artisan cache:clear && php artisan config:clear'"
       }
     }
   }
