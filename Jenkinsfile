@@ -9,7 +9,7 @@ pipeline {
     stage("Checkout: Code") {
         steps {
           sh "git pull https://github.com/thanhbinh1999/heyenglish.git master"
-          sh  " cd /var/www/html/docker && ls -l && docker exec -it heyenglish_php bash && ls -l"
+          sh  " cd /var/www/html/docker && docker-compose  exec -it heyenglish_php bash -c 'cd heyenglish  && composer install'"
         }
     }
   }
