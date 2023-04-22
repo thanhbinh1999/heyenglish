@@ -38,5 +38,7 @@ class Cronatab extends Command
     public function handle()
     {
         \Log::info(time());
+
+        echo  time();
     }
 }
