@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      */
 
     protected  $commands = [
-        Cronatab::class
+        'App\Console\Commands\Cronatab'
     ];
 
     protected function schedule(Schedule $schedule)
@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('export_excel')->everyMinute();
     }
 
-        /**
+    /**
      * Register the commands for the application.
      *
      * @return void
