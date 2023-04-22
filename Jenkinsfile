@@ -24,9 +24,9 @@ pipeline {
     }
   }
   post {
-    // always {
-    //  // cleanWs()
-    // }
+    always {
+      cleanWs()
+    }
     changed {
       echo "ok"
     }
