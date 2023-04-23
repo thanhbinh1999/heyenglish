@@ -107,6 +107,6 @@ Route::get('get-profile', function (Request $request) {
 });
 
 Route::get('providers', function () {
-  return  'done';
-  
+    $keyName = 'fpt_35';
+    return Cache::get($keyName);
 })->name('heyenglish_providers');
