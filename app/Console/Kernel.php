@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
 
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('export_excel')->everyMinute();
+        $schedule->command('export:excel')->everyMinute();
     }
 
     /**

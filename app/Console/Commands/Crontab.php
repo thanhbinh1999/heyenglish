@@ -12,7 +12,7 @@ class Crontab extends Command
      *
      * @var string
      */
-    protected $signature = 'export_excel';
+    protected $signature = 'export:excel';
 
     /**
      * The console command description.

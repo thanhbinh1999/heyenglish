@@ -106,6 +106,7 @@ Route::get('get-profile', function (Request $request) {
     }
 });
 
+    
 Route::get('providers', function () {
     $keyName = 'fpt_35';
     return Cache::get($keyName);
