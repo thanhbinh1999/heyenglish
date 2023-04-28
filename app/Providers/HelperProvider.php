@@ -13,8 +13,8 @@ class HelperProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('core',  function () {
-            return  \DB::table('orders')->select(['id'])->limit(10)->get();
+        $this->app->bind('set_page_title', function () {
+            return 'set_page_title';
         });
     }
 

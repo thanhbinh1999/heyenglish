@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Validator;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -106,8 +108,19 @@ Route::get('get-profile', function (Request $request) {
     }
 });
 
-    
+
 Route::get('providers', function () {
     $keyName = 'fpt_35';
     return Cache::get($keyName);
 })->name('heyenglish_providers');
+
+Route::get('storage',   function (Request $request) {
+
+    $validator = Validator::make($request->all(), [
+        'name' => 'string|max:3|upercase'
+    ]);
+    
+    return $validator->errors();
+
+    // return Storage::disk('public')->put('files/report-01.txt', 'content');
+});
