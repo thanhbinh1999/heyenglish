@@ -12,7 +12,7 @@ pipeline {
         sh 'cp -prv * /var/www/html/heyenglish'
       }
     }
-    stage('Build: Composer') {
+    stage('Build: Composer , node js') {
       steps {
         sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
       }
