@@ -14,7 +14,7 @@ pipeline {
     }
     stage('Build: Composer , node js') {
       steps {
-        sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install && npm run start'"
+        sh "cd /var/www/html/docker && docker exec -i heyenglish_php bash -c 'cd heyenglish && composer install'"
       }
     }
     stage('clear: Cache, Config') {
