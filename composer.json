@@ -7,12 +7,18 @@
     "require": {
         "php": "^7.3|^8.0",
         "barryvdh/laravel-dompdf": "^2.0",
+        "cboden/ratchet": "^0.4.4",
+        "doctrine/dbal": "^3.3",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "react/event-loop": "^1.1.0"
+        "rakit/validation": "^1.4",
+        "react/event-loop": "^1.1.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "spatie/once": "^2.2",
+        "textalk/websocket": "^1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -25,6 +31,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Kuroneko\\" : "app/Modules/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

@@ -6,6 +6,10 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Contracts\Cache\LockTimeoutException;
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\DesignPattern;
+use App\Http\Controllers\ZaloController;
+use App\Http\Controllers\ModelController;
+
 use Illuminate\Support\Facades\Validator;
 
 /*
@@ -34,6 +38,7 @@ route::get('db', function () {
 });
 
 Route::get('cache', function (Request $request) {
+
     $ids = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
     $left = 0;
@@ -41,7 +46,6 @@ Route::get('cache', function (Request $request) {
     $right = count($ids);
 
     $x = 6;
-
 
     for ($i = $left; $i <= $right; $i++) {
 
@@ -114,13 +118,104 @@ Route::get('providers', function () {
     return Cache::get($keyName);
 })->name('heyenglish_providers');
 
+
+
+
+
 Route::get('storage',   function (Request $request) {
 
     $validator = Validator::make($request->all(), [
         'name' => 'string|max:3|upercase'
     ]);
-    
+
     return $validator->errors();
 
     // return Storage::disk('public')->put('files/report-01.txt', 'content');
 });
+
+Route::get('cache-page', function () {
+    return 'done';
+});
+
+
+Route::get('singleton', [DesignPattern::class, 'singleton']);
+
+Route::get('factory', [DesignPattern::class, 'factory']);
+
+Route::get('builder', [DesignPattern::class, 'builder']);
+
+Route::get('adapter', [DesignPattern::class, 'adapter']);
+
+Route::get('facade', [DesignPattern::class, 'facade']);
+
+Route::get('strategy', [DesignPattern::class, 'strategy']);
+
+Route::get('proxy', [DesignPattern::class, 'proxy']);
+
+Route::get('chat', [DesignPattern::class, 'chat']);
+
+Route::get('zalo/login', [ZaloController::class, 'login']);
+
+Route::get('zalo/block', [ZaloController::class, 'block']);
+
+
+Route::get('placeholder/{id}', function ($id) {
+    $users = [
+        [
+            'userId' => 1,
+            'id' => 1,
+            'title' => 'delectus aut autem 1'
+        ],
+        [
+            'userId' => 2,
+            'id' => 2,
+            'title' => 'delectus aut autem 2'
+        ],
+        [
+            'userId' => 3,
+            'id' => 3,
+            'title' => 'delectus aut autem 3'
+        ],
+        [
+            'userId' => 4,
+            'id' => 4,
+            'title' => 'delectus aut autem 4'
+        ]
+    ];
+
+    $user =  array_filter($users, function ($item)  use ($id) {
+        return $item['id'] == $id;
+    });
+
+    header('Access-Control-Allow-Origin : *');
+
+    return array_values($user)[0];
+});
+
+Route::get('client', function () {
+    sleep(2);
+    return response()
+        ->json([
+            [
+                "userId" => 1,
+                "id" => 1,
+                "title" =>  "delectus aut autem",
+                "completed" => false
+            ],
+            [
+                "userId" => 1,
+                "id" => 2,
+                "title" => "quis ut nam facilis et officia qui",
+                "completed" => false
+            ]
+        ])
+        ->header('Access-Control-Allow-Origin', '*');
+});
+
+Route::get('validate', [ZaloController::class, 'form']);
+
+Route::get('model', [ModelController::class, 'index']);
+
+Route::get('create', [ModelController::class, 'create']);
+
+Route::get('user', [\App\Http\Controllers\UserController::class, 'index']);
