@@ -41,6 +41,3 @@ class ModelController extends Controller
         return $this->payment->show();
     }
 }
-// lan 1
-// lan 2
-// lan 3
