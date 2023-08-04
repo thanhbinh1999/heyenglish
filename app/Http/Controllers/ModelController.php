@@ -5,22 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Banners;
+use Mockery\Undefined;
+use PhpParser\Builder\Function_;
+use PhpParser\Node\Stmt\Return_;
 
 class ModelController extends Controller
 {
-    private $payment;
+    // private $payment;
 
     public function __construct(\App\Services\PaymentInterface $payment)
     {
-        $this->payment = $payment;
+        // $this->payment = $payment;
+    }
+
+
+    public function TEST()
+    {
+        return 'done';
     }
 
     public function index(Request $request)
     {
-        $banners = \DB::table('currencies')
-            ->simplePaginate(3);
+        $array = [
+            4,
+            1 + 4 => "A",
+            "@" => "@",
+        ];
 
-        return view("user.user_list", compact('banners'));
+        return ;
     }
 
     public function create(Request $request)

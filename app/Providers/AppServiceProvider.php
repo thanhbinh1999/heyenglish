@@ -29,9 +29,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->when(ModelController::class)->needs(PaymentInterface::class)->give(Payment::class);
+        //$this->app->when(ModelController::class)->needs(PaymentInterface::class)->give(Payment::class);
 
-        $this->app->when(UserController::class)->needs(PaymentInterface::class)->give(Paypal::class);
+        ///        $this->app->when(UserController::class)->needs(PaymentInterface::class)->give(Paypal::class);
+
+        $this->app->bind(PaymentInterface::class, Payment::class);
     }
 
     /**

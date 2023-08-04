@@ -4,6 +4,12 @@
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/thanhbinh1999/heyenglish"
+        }
+    ],
     "require": {
         "php": "^7.3|^8.0",
         "barryvdh/laravel-dompdf": "^2.0",
@@ -31,7 +37,6 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "Kuroneko\\" : "app/Modules/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
