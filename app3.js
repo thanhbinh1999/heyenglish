@@ -7,7 +7,3 @@ app.get("/", (req, res) => {
 });
 
 app.listen(2003, () => console.log("port 2003 runing"));
-
-
-
-

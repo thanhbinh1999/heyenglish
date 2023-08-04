@@ -128,4 +128,4 @@ class DesignPattern extends Controller
         return $request->all();
     }
 }
-// commit can bo
+// commit sua file cua huynh
