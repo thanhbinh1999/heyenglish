@@ -33,7 +33,7 @@ class ModelController extends Controller
         ];
         //
 
-        return;
+        return ;
     }
 
     public function create(Request $request)
@@ -44,4 +44,3 @@ class ModelController extends Controller
 
 // commit sua file cua dat
 
-/// commit ok
