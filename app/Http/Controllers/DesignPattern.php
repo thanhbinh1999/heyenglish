@@ -120,6 +120,7 @@ class DesignPattern extends Controller
         $client = new \WebSocket\Client("ws://localhost:8000");
         $client->text(99);
         $client->close();
+        ///
     }
 
     public function loginWithQrCode(Request $request)
