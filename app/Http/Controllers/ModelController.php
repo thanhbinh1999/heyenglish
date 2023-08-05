@@ -31,6 +31,7 @@ class ModelController extends Controller
             1 + 4 => "A",
             "@" => "@",
         ];
+        //
 
         return ;
     }
