@@ -41,9 +41,4 @@ class ModelController extends Controller
         return $this->payment->show();
     }
 }
-
-// commit sua file cua dat
-
-/// commit ok
-/// commit 1
-/// test
+// commit c2
