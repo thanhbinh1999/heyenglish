@@ -40,5 +40,10 @@ class ModelController extends Controller
     {
         return $this->payment->show();
     }
+
+    public function continute(){
+        return 'xxxx';
+    }
+
+    
 }
-// commit deploy da fix het loi
