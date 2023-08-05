@@ -41,5 +41,9 @@ class ModelController extends Controller
         return $this->payment->show();
     }
 }
+<<<<<<< HEAD
 
 // commit c1
+=======
+// commit c2
+>>>>>>> commit c2
