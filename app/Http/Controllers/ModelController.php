@@ -45,5 +45,11 @@ class ModelController extends Controller
         return 'da fix het loi roi';
     }
 
-    
+    public function search(){
+        return 'develop';
+    } 
+
+    public function searchIn(){
+        
+    }
 }
