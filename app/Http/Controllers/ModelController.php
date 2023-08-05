@@ -42,7 +42,7 @@ class ModelController extends Controller
     }
 
     public function continute(){
-        return 'xxxx';
+        return 'da fix het loi roi';
     }
 
     
