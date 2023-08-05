@@ -42,13 +42,4 @@ class ModelController extends Controller
     }
 }
 
-// commit sua file cua dat
-
-/// commit ok
-/// commit 1
-/// test
-
-
-
-
-/// noi sung cua feature search
+// commit c1
