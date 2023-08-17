@@ -3,16 +3,16 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Console\Events\CommandStarting;
 
-class Crontab extends Command
+class PreCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'export:excel';
+    protected $signature = 'preCommand';
 
     /**
      * The console command description.
@@ -36,8 +36,15 @@ class Crontab extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle(CommandStarting $event)
     {
-        \Log::info(time().'-----');
+        ///if (app()->environment(['production'])) {
+        logger('Trying to fresh database in production');
+        if ($event->command == 'migrate:refresh') {
+            $this->output = $event->output;
+            $this->info($event->command);
+            die();
+        }
+        //  }
     }
 }

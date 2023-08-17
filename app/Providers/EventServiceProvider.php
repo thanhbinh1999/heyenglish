@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Console\Events\CommandStarting;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -18,6 +19,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        \App\Events\Contact::class => [
+            \App\Listeners\Contat::class
+        ]
     ];
 
     /**
@@ -27,6 +31,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Event::listen(CommandStarting::class, \App\Console\Commands\PreCommand::class);
     }
 }

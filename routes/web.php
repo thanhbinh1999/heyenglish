@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\DesignPattern;
 use App\Http\Controllers\ZaloController;
 use App\Http\Controllers\ModelController;
+use App\Http\Controllers\ContactController;
+
 
 use Illuminate\Support\Facades\Validator;
 
@@ -219,3 +221,11 @@ Route::get('model', [ModelController::class, 'index']);
 Route::get('create', [ModelController::class, 'create']);
 
 Route::get('user', [\App\Http\Controllers\UserController::class, 'index']);
+
+Route::get('contact', [ContactController::class, 'index'])->name('contact_index');
+
+Route::get('contact/producer', [ContactController::class, 'producer'])->name('');
+
+Route::get('contact/consumer', [ContactController::class, 'consumer'])->name('');
+
+Route::get('contact/form', [ContactController::class, 'form']);

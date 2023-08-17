@@ -50,6 +50,5 @@ class ModelController extends Controller
     } 
 
     public function searchIn(){
-        
     }
 }
