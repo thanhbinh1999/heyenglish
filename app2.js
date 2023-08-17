@@ -1,9 +1,3 @@
-const express = require("express");
+/// commit d
 
-const app = express();
-
-app.get("/", (req, res) => {
-    res.send("app 2 hello"); // fixed
-});
-
-app.listen(2002, () => console.log("port 2002 runing"));
+///task is pending....
