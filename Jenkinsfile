@@ -5,6 +5,7 @@ pipeline {
     BUILD_SCRIPTS = 'heyenglish'
     BUILD_HOME = '/var/www/html/projects/'
   }
+    
   stages {
     stage('Update: Code') {
       steps {
