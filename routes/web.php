@@ -218,4 +218,4 @@ Route::get('model', [ModelController::class, 'index']);
 
 Route::get('create', [ModelController::class, 'create']);
 
-Route::get('user', [\App\Http\Controllers\UserController::class, 'index']);
+Route::get('usedr', [\App\Http\Controllers\UserController::class, 'index']);
