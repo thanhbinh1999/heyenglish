@@ -33,7 +33,9 @@ jobs:
       run: composer install 
       
     - name: Move folder
-      run: sudo  cp -r .  /../../../../var/www/html/heyenglish
+      run: sudo  cp -r .  /../../../../var/www/html/heyenglish\
+    - name: install, update packages
+      run : cd /var/www/html/heyenghlish  && composer install 
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
     # Docs: https://getcomposer.org/doc/articles/scripts.md
