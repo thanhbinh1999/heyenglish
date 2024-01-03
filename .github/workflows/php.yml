@@ -33,6 +33,8 @@ jobs:
       
     - name : cache [config,router, views]
       run : php artisan view:cache
+    - name : check config
+      run: sudo docker stats ttct_php
     
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
