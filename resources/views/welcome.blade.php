@@ -9,7 +9,7 @@
 </head>
 
 <body>
-   @content('content');
+    <h1>done</h1>
 </body>
 
 </html>
