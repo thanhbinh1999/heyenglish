@@ -30,8 +30,9 @@ jobs:
       
     - name: install, update packages
       run : cd /var/www/html/heyenglish && composer install 
+      
     - name : cache [config,router, views]
-      run : php artisan view:cache ,  php artisan  config:clear
+      run : php artisan view:cache
     
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
