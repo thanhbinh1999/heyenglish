@@ -32,7 +32,7 @@ jobs:
       run : cd /var/www/html/heyenglish && composer install 
       
     - name : cache [config,router, views]
-      run : php artisan view:cache
+      run : php artisan cahce:clean 
     
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
